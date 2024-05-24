@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint ./src --ext .jsx --ext .js",
-    "test": "vitest"
+    "test": "vitest",
+    "e2e": "cypress run"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
