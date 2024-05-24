@@ -32,8 +32,8 @@ function RegisterPage() {
         <p className="register-page__link">
           Already have an account?
           {' '}
-          <Link to="/" className="register-page__login-link">
-            Sign In
+          <Link to="/" className="register-page__login-link" style={{ color: 'blue' }}>
+            Login Now
           </Link>
           {' '}
           {/* Updated call to action */}

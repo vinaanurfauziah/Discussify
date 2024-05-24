@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/order */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
@@ -7,6 +9,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import useInput from '../hooks/useInput';
+import { motion } from 'framer-motion';
 
 // Deklarasi komponen ThreadCommentInput dengan prop 'commentThread'
 function ThreadCommentInput({ commentThread }) {
@@ -46,7 +49,7 @@ function ThreadCommentInput({ commentThread }) {
     // Mengembalikan elemen div dengan kelas 'thread-comment-input'
     <div className="thread-comment-input">
       <textarea placeholder="comment" value={comment} onChange={setComment} maxLength={320} />
-      <button type="submit" onClick={() => commentThread({ comment })}>Comment</button>
+      <motion.button whileHover={{ scale: 1.1, textShadow: '0px 0px 8px rgb(255,255,255)', boxShadow: '0px 0px 8px rgb(255,255,255)' }} type="submit" onClick={() => commentThread({ comment })}>Comment</motion.button>
     </div>
   );
 }

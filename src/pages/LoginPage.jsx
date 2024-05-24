@@ -22,15 +22,15 @@ function LoginPage() {
         </h1>
       </header>
       <article className="login-page__main">
-        <h2 className="login-page__title">Welcome Back, Beautiful!</h2>
+        <h2 className="login-page__title">Hey, Login Now</h2>
         {' '}
         {/* Updated greeting */}
         <LoginInput login={onLogin} />
         <p className="login-page__link">
-          Don't have an account?
+          If you are new,
           {' '}
-          <Link to="/register" className="login-page__register-link">
-            Hey, Login Now
+          <Link to="/register" className="login-page__register-link" style={{ color: 'blue' }}>
+            Create Account
           </Link>
           {' '}
           {/* Updated call to action */}

@@ -1,5 +1,8 @@
+/* eslint-disable quotes */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from "framer-motion";
 import useInput from '../hooks/useInput';
 
 function LoginInput({ login }) {
@@ -10,7 +13,7 @@ function LoginInput({ login }) {
     <form className="login-input">
       <input type="email" value={email} onChange={onEmailChange} placeholder="Email" />
       <input type="password" value={password} onChange={onPasswordChange} placeholder="Password" />
-      <button type="button" onClick={() => login({ email, password })}>Login</button>
+      <motion.button whileHover={{ scale: 1.1, textShadow: "0px 0px 8px rgb(255,255,255)", boxShadow: "0px 0px 8px rgb(255,255,255)" }} type="button" onClick={() => login({ email, password })}>Login</motion.button>
     </form>
   );
 }

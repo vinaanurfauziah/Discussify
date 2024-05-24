@@ -1,5 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 function ThreadInput({ addThread }) {
   const [title, setTitle] = useState('');
@@ -42,7 +44,7 @@ function ThreadInput({ addThread }) {
         <strong>{body.length}</strong>
         /320
       </p>
-      <button type="submit" onClick={addthread}>Buat</button>
+      <motion.button whileHover={{ scale: 1.1, textShadow: '0px 0px 8px rgb(255,255,255)', boxShadow: '0px 0px 8px rgb(255,255,255)' }} type="submit" onClick={addthread}>Buat</motion.button>
     </div>
   );
 }

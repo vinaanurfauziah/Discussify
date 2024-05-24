@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useInput from '../hooks/useInput';
+import { motion } from "framer-motion";
 
 function RegisterInput({ register }) {
   const [name, onNameChange] = useInput('');
@@ -36,7 +37,7 @@ function RegisterInput({ register }) {
         onChange={onPasswordChange}
         placeholder="Kata Sandi"
       />
-      <button type="submit">Daftar</button>
+      <motion.button whileHover={{ scale: 1.1, textShadow: '0px 0px 8px rgb(255,255,255)', boxShadow: '0px 0px 8px rgb(255,255,255)' }} type="submit">Daftar</motion.button>
     </form>
   );
 }
