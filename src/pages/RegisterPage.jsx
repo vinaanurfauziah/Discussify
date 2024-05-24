@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { BsStars } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
@@ -24,7 +25,7 @@ function RegisterPage() {
         </h1>
       </header>
       <article className="register-page__main">
-        <h2 className="register-page__title">Hello Gorgeous, Join Us!</h2>
+        <h2 className="register-page__title">Let's Create an Account </h2>
         {' '}
         {/* Updated greeting */}
         <RegisterInput register={onRegister} />

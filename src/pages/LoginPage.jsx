@@ -30,7 +30,7 @@ function LoginPage() {
           Don't have an account?
           {' '}
           <Link to="/register" className="login-page__register-link">
-            Join Us Now
+            Hey, Login Now
           </Link>
           {' '}
           {/* Updated call to action */}
