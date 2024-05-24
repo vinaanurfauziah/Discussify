@@ -22,7 +22,7 @@ function LoginPage() {
         </h1>
       </header>
       <article className="login-page__main">
-        <h2 className="login-page__title">Hey, Login Now</h2>
+        <h2 className="login-page__title">Hey, Login Now!</h2>
         {' '}
         {/* Updated greeting */}
         <LoginInput login={onLogin} />
