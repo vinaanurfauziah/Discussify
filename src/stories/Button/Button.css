@@ -1,0 +1,20 @@
+.button {
+    font-family: 'Arial', sans-serif;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+  }
+  
+  .button--small {
+    font-size: 12px;
+  }
+  
+  .button--medium {
+    font-size: 14px;
+  }
+  
+  .button--large {
+    font-size: 16px;
+  }
+  
