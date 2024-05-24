@@ -1,0 +1,897 @@
+/* Resetting default margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global CSS variables */
+:root {
+  --accent-color: #452d21;
+  --foreground-color: #0F1419;
+  --background-color: #ffffff;
+  --gray-dark-color: #66757F;
+  --gray-light-color: #edeff1;
+  --border-color: #dedede;
+  --hover-background-color: #f9f9f9;
+  --primary-color: #007bff;
+  --hover-color: #ff88a0;
+}
+
+/* Styling for the whole page */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
+
+/* Container for the main content, centered with a max-width */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Styling for a loading indicator */
+.loading {
+  position: sticky;
+  top: 0;
+}
+
+/* Layout for login and register pages */
+.login-page, .register-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+/* Styling for the hero section of login and register pages */
+.login-page__hero, .register-page__hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 160px;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+/* Styling for the main content of login and register pages */
+.login-page__main, .register-page__main {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 64px;
+}
+
+/* Styling for the headings in login and register pages */
+.login-page__main h2, .register-page h2 {
+  font-weight: 300;
+  font-size: 48px;
+}
+
+/* Styling for input fields in login and register forms */
+.login-input input, .register-input input {
+  display: block;
+  width: 100%;
+  padding: 12px 8px;
+  margin: 8px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--gray-dark-color);
+}
+
+/* Styling for buttons in login and register forms */
+.login-input button, .register-input button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border: 0;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Layout for the home page */
+.home-page {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Styling for the navigation bar */
+.navigation {
+  min-height: 75px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #452d21;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px; 
+}
+
+/* Styling for navigation links and buttons */
+.navigation a, .navigation button {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.navigation a:hover {
+  color:#e1d4ce; 
+}
+
+.navigation img {
+  width: 32px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.navigation nav {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+}
+
+.navigation nav a {
+  text-decoration: none;
+  color: #e1d4ce;
+  font-weight: bold;
+  margin: 0 10px; 
+  transition: color 0.3s;
+  color: white;
+}
+
+.navigation nav a:hover {
+  color: #94644e; 
+}
+
+.navigation button {
+  border: 0;
+  background-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.navigation button:hover {
+  transform: scale(1.1);
+  color: #94644e; 
+}
+
+/* Styling for the icons */
+.navigation svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  vertical-align: middle;
+}
+
+/* Styling for specific icons */
+.navigation svg.home-icon {
+  margin-right: 4px;
+}
+
+.navigation svg.leaderboard-icon {
+  margin-right: 6px;
+}
+
+/* Styling for the list of threads */
+.app-container .thread-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.threads-list {
+  margin-bottom: 32px;
+}
+
+/* Styling for each thread item */
+.thread-item {
+  padding: 16px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--background-color);
+  margin-bottom: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.thread-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--hover-background-color);
+}
+
+/* Styling for the user avatar in the thread item */
+.thread-item__user-avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+/* Styling for the details section in the thread item */
+.thread-item__detail {
+  flex: 1;
+}
+
+/* Styling for the header of the thread item */
+.thread-item__detail header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Styling for the owner info in the thread item */
+.thread-item__owner-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.thread-item__owner-name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.thread-item__created-at {
+  font-size: 14px;
+  color: var(--gray-dark-color);
+}
+
+/* Styling for the category, title, and body of the thread item */
+.thread-item__category {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 8px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.thread-item__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px; /* Menambahkan jarak dari atas */
+  margin-bottom: 10px;
+}
+
+.thread-item__body {
+  font-size: 16px;
+  color: var(--gray-dark-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Styling for the total comments section of the thread item */
+.thread-item__totalComments {
+  display: flex;
+  align-items: center;
+  color: var(--gray-dark-color);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.thread-item__comment-icon {
+  margin-right: 8px;
+}
+
+/* Styling for the total comments count in the thread item */
+.thread-item__totalComments-count {
+  font-size: 14px;
+}
+
+/* ====================== */
+
+/* Styling for the upvote button in the thread item */
+.thread-item__upVotesBy p {
+  margin-top: 12px;
+}
+
+.thread-item__upVotesBy button {
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.thread-item__upVotesBy button:hover {
+  color: var(--hover-color);
+}
+
+
+/* Styling for vote count */
+.thread-item__vote-count {
+  margin-left: 4px;
+  color: #888;
+}
+
+/* = */
+
+/* Styling for the upvote and downvote buttons in the thread item */
+.thread-item__vote-section {
+  display: flex;
+  flex-direction: row; /* Mengatur agar elemen-elemen berbaris */
+  align-items: center;
+  gap: 20px; /* Menambahkan jarak horizontal antara elemen */
+  margin-top: 20px; /* Menambahkan jarak atas */
+}
+
+/* Styling for the upvote and downvote buttons in the thread item */
+.thread-item__vote-section p {
+  margin-top: 12px;
+}
+
+/* Styling for the vote button */
+.thread-item__vote-button {
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.thread-item__vote-button:hover .thread-item__vote-icon {
+  color: var(--hover-color);
+}
+
+.thread-item__upvoted .thread-item__vote-icon {
+  color: var(--primary-color);
+}
+
+.thread-item__downvoted .thread-item__vote-icon {
+  color: #ff0000; /* Change to the desired color for the downvote icon */
+}
+
+/* ================================ */
+
+/* Styling for the vote section in thread detail */
+.thread-detail__votes {
+  display: flex;
+  flex-direction: row; /* Mengatur agar elemen-elemen berbaris */
+  align-items: center;
+  gap: 20px; /* Menambahkan jarak horizontal antara elemen */
+  margin-top: 20px; /* Menambahkan jarak atas */
+}
+
+.thread-detail__votes p {
+  margin-top: 12px;
+}
+
+/* Styling for the upvote and downvote buttons in the thread detail page */
+.thread-detail__vote-button {
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.thread-detail__upVotesBy p {
+  margin-top: 12px;
+}
+
+.thread-detail__upVotesBy button {
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.thread-detail__upVotesBy button:hover {
+  color: var(--hover-color);
+}
+
+/* Styling for vote count in thread detail */
+.thread-detail__vote-count {
+  margin-left: 4px;
+  color: #888;
+}
+
+.thread-detail__vote-button:hover {
+  color: var(--hover-color);
+}
+
+.thread-detail__upvoted .thread-detail__vote-icon {
+  color: var(--primary-color);
+}
+
+.thread-detail__downvoted .thread-detail__vote-icon {
+  color: #ff0000; /* Ganti dengan warna yang diinginkan untuk ikon downvote */
+}
+
+/* Styling for the vote icons */
+.thread-detail__vote-icon {
+  font-size: 24px; /* Sesuaikan ukuran ikon dengan kebutuhan */
+  color: #888; /* Warna awal ikon */
+}
+
+/* ================================ */
+
+
+/* Styling for thread input field */
+.app-container .thread-input {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.thread-input, .thread-reply-input {
+  margin-bottom: 16px;
+}
+
+.thread-input input, .thread-reply-input input {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  border: 2px solid #452d21; 
+  border-radius: 8px; 
+  padding: 8px;
+  width: 100%;
+  height: 40px;
+  resize: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+.thread-input textarea, .thread-reply-input textarea {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  border: 2px solid #452d21; 
+  border-radius: 8px; 
+  padding: 8px;
+  width: 100%;
+  height: 150px;
+  resize: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.thread-input input:hover, .thread-input textarea:hover {
+  border-color: #94644e;
+}
+
+/* Styling for buttons in thread input fields */
+.app-container .thread-input button {
+  max-width: 800px;
+  margin-bottom: 20px;
+  /* margin: 0 auto; */
+}
+
+.thread-input button, .thread-reply-input button {
+  background-color: #452d21;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--background-color);
+  font-weight: 600;
+  font-size: 15px;
+  border: 0;
+  width: 25%;
+  padding: 10px 20px; /* Ubah padding untuk membuat tombol lebih besar */
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  max-width: 200px; /* Sesuaikan lebar maksimum tombol */
+  border-radius: 20px;
+  transition: background-color 0.3s; /* Efek transisi untuk perubahan warna latar saat hover */
+}
+
+
+/* Efek hover pada tombol */
+.thread-input button:hover, .thread-reply-input button:hover {
+  background-color: #94644e; /* Ganti dengan warna yang diinginkan saat tombol dihover */
+  color: black;
+}
+
+/* Character count text below thread input fields */
+.thread-input__char-left, .thread-reply-input__char-left {
+  font-size: 15px;
+  margin: 6px 0 8px 0;
+  color: var(--gray-dark-color);
+}
+
+/* styles/style.css */
+
+.filter-kategori {
+  margin-bottom: 20px;
+  text-align: center; /* Center align text within the container */
+}
+
+.filter-kategori h3 {
+  margin-bottom: 10px; /* Tambahkan jarak antara label dan filter */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.filter-kategori button {
+  margin: 0 10px 10px 0; /* Adjust margin to provide space between buttons */
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.filter-kategori button:hover {
+  background-color: #d0d0d0;
+}
+
+.filter-kategori button:focus {
+  background-color: #b0b0b0;
+}
+
+
+/* Styling for detail page */
+.detail-page {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Styling for parent section in detail page */
+.detail-page__parent {
+  margin-bottom: 64px;
+}
+
+.detail-page__parent h3 {
+  margin: 8px 0 16px 0;
+}
+
+/* Styling untuk bagian komentar pada halaman detail */
+.detail-page__comments {
+  margin-top: 32px;
+  padding: 16px;
+  background-color: var(--gray-light-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-page__comments h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--foreground-color);
+}
+
+.detail-page__comments .comment-item {
+  padding: 12px;
+  border-bottom: 1px solid var(--gray-dark-color);
+  margin-bottom: 8px;
+}
+
+.detail-page__comments .comment-item:last-child {
+  border-bottom: none;
+}
+
+.detail-page__comments .comment-item p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--foreground-color);
+}
+
+.detail-page__comments .comment-item .comment-author {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: var(--accent-color);
+}
+
+.detail-page__comments .comment-item .comment-date {
+  font-size: 14px;
+  color: var(--gray-dark-color);
+}
+
+/* Styling for the thread comment input container */
+.thread-comment-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  /* background: var(--gray-light-color); Background color change */
+  border-radius: 10px;
+  padding: 20px; /* Add padding for inner spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Styling for the textarea inside thread comment input container */
+.thread-comment-input textarea {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  border: 2px solid #452d21; 
+  border-radius: 8px; 
+  padding: 10px; /* Adjust padding for better spacing */
+  width: 100%;
+  height: 150px; /* Set a fixed height for textarea */
+  font-size: 15px;
+  resize: none;
+  transition: border-color 0.3s;
+}
+
+/* Styling for the button inside thread comment input container */
+.thread-comment-input button {
+  background-color: #452d21;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--background-color);
+  font-weight: 600;
+  font-size: 15px;
+  border: 0;
+  padding: 10px 20px; /* Adjust padding for better spacing */
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the button */
+.thread-comment-input button:hover {
+  background-color: #94644e; /* Lighter accent color on hover */
+}
+
+
+/* Styling for thread detail section */
+.thread-detail {
+  margin-top: 32px;
+}
+
+.thread-detail header {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--gray-light-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.thread-detail header img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.thread-detail__user-info {
+  font-size: 20px;
+}
+
+.thread-detail__user-name {
+  font-weight: 600;
+}
+
+.thread-detail__text {
+  font-size: 20px;
+}
+
+.thread-detail__title {
+  font-size: 24px; /* Sesuaikan ukuran font dengan kebutuhan */
+  font-weight: bold; /* Tambahkan ketebalan teks sesuai kebutuhan */
+  color: var(--foreground-color); /* Sesuaikan warna teks sesuai kebutuhan */
+  margin-top: 12px; /* Sesuaikan margin bawah sesuai kebutuhan */
+}
+
+.thread-detail__body {
+  font-size: 18px; /* Sesuaikan ukuran font dengan kebutuhan */
+  color: var(--foreground-color); /* Sesuaikan warna teks sesuai kebutuhan */
+  line-height: 1.6; /* Sesuaikan line-height sesuai kebutuhan */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+
+}
+
+.thread-detail footer {
+  background-color: var(--gray-light-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 32px;
+  display: flex;
+}
+
+/* Styling for the created-at timestamp in thread detail */
+.thread-detail__created-at {
+  margin-left: auto; /* Memindahkan ke sisi kanan */
+  font-size: 14px;
+  color: var(--gray-dark-color);
+}
+
+
+/* Styling for vote section in thread detail */
+.thread-detail__vote {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Terapkan gaya yang sama untuk kategori di thread-item */
+.thread-detail__category {
+  margin: 0 10px 10px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.thread-detail__category:hover {
+  background-color: #d0d0d0;
+}
+
+.thread-detail__category:focus {
+  background-color: #b0b0b0;
+}
+
+/* Pastikan alignment yang benar untuk createdAt */
+.thread-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thread-item__ownerId-name {
+  margin-top: 10px; /* Tambahkan margin atas untuk memberikan jarak ke atas */
+  margin-bottom: 10px; /* Tambahkan margin bawah untuk memberikan jarak ke bawah */
+}
+
+.thread-detail__vote button {
+  background-color: var(--background-color);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.thread-detail__vote button {
+  background-color: transparent;
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s; /* Tambahkan efek transisi */
+}
+
+.thread-detail__vote button:hover {
+  color: var(--accent-color); /* Ganti warna tombol saat dihover */
+}
+
+/* Styling for comments in thread detail */
+.comment {
+  border-bottom: 1px solid #ccc; /* Garis pembatas antara setiap komentar */
+  padding: 12px; /* Padding untuk ruang kosong di dalam container */
+  margin-bottom: 16px; /* Ruang bawah antara komentar */
+  background-color: #f8f9fa; /* Warna latar belakang */
+  border-radius: 8px; /* Sudut border container */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.comment:hover {
+  background-color: #f0f0f0; /* Warna latar belakang saat dihover */
+  transform: translateY(-2px); /* Efek naik sedikit saat dihover */
+}
+
+.comment-item {
+  padding: 12px;
+  border-bottom: 1px solid var(--gray-light-color);
+  margin-bottom: 16px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.comment-item:hover {
+  background-color: var(--gray-light-color);
+  transform: translateY(-2px);
+}
+
+.comment-body {
+  font-size: 16px;
+  color: var(--foreground-color);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.comment-content {
+  font-size: 16px; /* Ukuran teks konten */
+  color: #333; /* Warna teks konten */
+  line-height: 1.5; /* Line height untuk legibilitas */
+  margin-bottom: 4px; /* Jarak bawah dari konten ke nama */
+}
+
+.comment-author {
+  font-size: 14px; /* Ukuran teks nama */
+  font-weight: bold; /* Teks nama menjadi tebal */
+  color: #007bff; /* Warna teks nama */
+  margin-bottom: 4px; /* Jarak bawah dari nama ke tanggal */
+}
+
+.comment-date {
+  font-size: 12px; /* Ukuran teks tanggal */
+  font-style: italic; /* Teks tanggal menjadi miring */
+  color: #666; /* Warna teks tanggal */
+}
+
+.comments-to-container {
+  background-color: #f8f9fa; /* Warna latar belakang */
+  padding: 20px; /* Padding untuk ruang kosong di dalam container */
+  border-radius: 8px; /* Sudut border container */
+  margin-top: 20px; /* Jarak atas dari konten sebelumnya */
+}
+
+.comments-to-container h3 {
+  color: #94644e; /* Warna teks judul, warna biru menekankan */
+  font-size: 1.5em; /* Ukuran teks judul */
+  margin-bottom: 15px; /* Jarak bawah dari judul */
+}
+
+.comments-to-container p {
+  color: #333; /* Warna teks konten */
+  font-size: 1em; /* Ukuran teks konten */
+  margin-bottom: 10px; /* Jarak bawah dari setiap paragraf */
+}
+
+.comments-to-container p.by-author {
+  font-weight: bold; /* Teks nama pemilik komentar menjadi tebal */
+}
+
+.comments-to-container p.date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.comments-to-container .comment {
+  border-bottom: 1px solid #ccc; /* Garis pembatas antara setiap komentar */
+  padding-bottom: 10px; /* Ruang bawah antara komentar dan garis pembatas */
+  margin-bottom: 10px; /* Ruang bawah antara komentar */
+}
+
+
+/* Styling for the logout button */
+.logout-button {
+  border: 0;
+  background-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 8px;
+}
+
+.logout-button:hover {
+  transform: scale(1.1);
+  color: #94644e; 
+}
+
+.logout-button svg {
+  width: 24px;
+  height: 24px;
+  fill: red;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 850px) {
+  .login-page, .register-page {
+    grid-template-columns: 1.25fr 1fr;
+  }
+}
