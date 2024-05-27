@@ -7,7 +7,9 @@
  * - UnsetAuthUser Thunk
  *  - should dispatch action correctly when data fetching success
  */
-import { describe, beforeEach, afterEach, it, vi, expect } from 'vitest';
+import {
+  describe, beforeEach, afterEach, it, vi, expect,
+} from 'vitest';
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 import {
@@ -58,13 +60,13 @@ describe('AuthUser thunk', () => {
     const dispatch = vi.fn();
     // action
     await asyncSetAuthUser({ email: 'test-1@gmail.com', password: 'test123' })(
-      dispatch
+      dispatch,
     );
 
     // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(
-      setAuthUserActionCreator(fakeAuthUser)
+      setAuthUserActionCreator(fakeAuthUser),
     );
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
@@ -78,10 +80,10 @@ describe('AuthUser thunk', () => {
     window.alert = vi.fn();
     // action
     await asyncSetAuthUser({ email: 'test-1@gmail.com', password: 'test123' })(
-      dispatch
+      dispatch,
     );
 
-    //assert
+    // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
     expect(window.alert).toHaveBeenCalledWith(fakeErrorResponse.message);
