@@ -25,7 +25,7 @@ function RegisterPage() {
         </h1>
       </header>
       <article className="register-page__main">
-        <h2 className="register-page__title">Let's Create an Account </h2>
+        <h2 className="register-page__title">Let's Create an Account!</h2>
         {' '}
         {/* Updated greeting */}
         <RegisterInput register={onRegister} />
