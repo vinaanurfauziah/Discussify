@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import useInput from '../hooks/useInput';
-import { motion } from "framer-motion";
 
 function RegisterInput({ register }) {
   const [name, onNameChange] = useInput('');
