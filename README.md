@@ -1,4 +1,4 @@
-# 💬 Forum Diskusi App — Automation Testing & CI/CD
+# 💬 Discussify App — Automation Testing & CI/CD
 
 Repositori ini merupakan bagian dari submission akhir kelas **Menjadi React Web Developer Expert** dari Dicoding. Fokus utama proyek ini adalah menerapkan **Automation Testing**, **Continuous Integration**, dan **Continuous Deployment** (CI/CD) pada aplikasi forum diskusi yang telah dikembangkan pada submission sebelumnya.
 
@@ -53,8 +53,6 @@ npm run e2e       # untuk E2E test menggunakan Cypress
 Aplikasi ini memanfaatkan:
 
 ✅ **Framer Motion** — untuk animasi transisi UI  
-✅ **Zustand** — alternatif pengelolaan state  
-✅ **Storybook** — dokumentasi dan pengujian visual komponen UI
 
 ---
 
@@ -73,6 +71,18 @@ Aplikasi tetap memenuhi fungsionalitas submission sebelumnya:
 
 ### 1. Clone repositori
 ```bash
-git clone https://github.com/username/forum-diskusi-app.git
-cd forum-diskusi-app
-
+git clone https://github.com/vinaanurfauziah/Discussify.git
+cd Discussify
+````
+2. Install dependencies
+```bash
+npm install
+````
+3. Jalankan aplikasi lokal
+```bash
+npm run dev
+```   
+5. Jalankan testing
+```bash
+npm test      # Unit & integration
+npm run e2e   # E2E testing (Cypress)
